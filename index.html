@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConcertOne | Шаблон сайта артиста</title>
+    <meta
+      name="description"
+      content="Универсальный шаблон промо-сайта артиста и мероприятий с продажей билетов."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <span class="brand-mark">C1</span>
+        <span class="brand-text">ConcertOne</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="desktop-nav" aria-label="Главная навигация">
+        <a href="#lineup">Лайнап</a>
+        <a href="#tickets">Билеты</a>
+        <a href="#schedule">Программа</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" data-bind-href="ticketUrl" href="#">Купить</a>
+      </nav>
+    </header>
+
+    <aside class="mobile-menu" id="mobileMenu" aria-label="Мобильное меню" hidden>
+      <nav>
+        <a href="#lineup">Лайнап</a>
+        <a href="#tickets">Билеты</a>
+        <a href="#schedule">Программа</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" data-bind-href="ticketUrl" href="#">Купить билеты</a>
+      </nav>
+    </aside>
+
+    <main id="top">
+      <section class="hero section-reveal">
+        <p class="hero-kicker">Серия концертов 2026</p>
+        <h1>
+          <span data-bind="artist">Gorilla Glue</span>
+          <span class="x">x</span>
+          <span data-bind="guest">Special Guests</span>
+        </h1>
+        <p class="hero-subtitle">
+          Энергия живого шоу, премиальный звук, визуал на максимум. Шаблон легко адаптируется под
+          любого артиста, тур или фестиваль.
+        </p>
+
+        <div class="hero-meta">
+          <div>
+            <span>Дата</span>
+            <strong data-bind="eventDateLabel">12 сентября 2026</strong>
+          </div>
+          <div>
+            <span>Площадка</span>
+            <strong data-bind="venue">A2 Green Concert</strong>
+          </div>
+          <div>
+            <span>Город</span>
+            <strong data-bind="city">Санкт-Петербург</strong>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button button-primary" data-bind-href="ticketUrl" href="#">Купить билеты</a>
+          <a class="button button-secondary" href="#lineup">Смотреть лайнап</a>
+        </div>
+
+        <div class="countdown" aria-live="polite">
+          <p>До старта:</p>
+          <div class="countdown-grid">
+            <div><span id="days">00</span><small>дней</small></div>
+            <div><span id="hours">00</span><small>часов</small></div>
+            <div><span id="minutes">00</span><small>минут</small></div>
+            <div><span id="seconds">00</span><small>секунд</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Анонс артистов">
+        <div class="ticker-track" data-bind="tickerText">
+          GORILLA GLUE • LIL NAKUR • SPECIAL LIVE SET • AFTERPARTY • VIP ZONE •
+        </div>
+      </section>
+
+      <section id="lineup" class="section lineup section-reveal">
+        <div class="section-title-wrap">
+          <p class="section-label">Lineup</p>
+          <h2>Кого увидят зрители</h2>
+        </div>
+        <div class="cards cards-3">
+          <article class="card">
+            <h3 data-bind="headliner">Gorilla Glue</h3>
+            <p>Главный артист вечера. Полноформатное шоу с лайв-бэндом и фирменными треками.</p>
+          </article>
+          <article class="card">
+            <h3 data-bind="guest">Lil Nakur</h3>
+            <p>Специальный гость с отдельным сетом и совместными номерами на ключевых треках.</p>
+          </article>
+          <article class="card">
+            <h3>Local Support</h3>
+            <p>Разогрев от местных артистов, чтобы зал был готов к хедлайнерам с первых минут.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="tickets" class="section tickets section-reveal">
+        <div class="section-title-wrap">
+          <p class="section-label">Tickets</p>
+          <h2>Тарифы и доступы</h2>
+        </div>
+        <div class="cards cards-3">
+          <article class="ticket-card">
+            <p class="ticket-name">Early Bird</p>
+            <p class="ticket-price">2 490 ₽</p>
+            <ul>
+              <li>Вход на концерт</li>
+              <li>Танцпол</li>
+              <li>Электронный билет</li>
+            </ul>
+            <a data-bind-href="ticketUrl" href="#">Выбрать</a>
+          </article>
+          <article class="ticket-card featured">
+            <p class="ticket-name">Fan Pass</p>
+            <p class="ticket-price">4 990 ₽</p>
+            <ul>
+              <li>Вход + фан-зона</li>
+              <li>Приоритетный вход</li>
+              <li>Мерч с ивента</li>
+            </ul>
+            <a data-bind-href="ticketUrl" href="#">Выбрать</a>
+          </article>
+          <article class="ticket-card">
+            <p class="ticket-name">VIP Lounge</p>
+            <p class="ticket-price">9 900 ₽</p>
+            <ul>
+              <li>Отдельный вход</li>
+              <li>VIP-бар и зона отдыха</li>
+              <li>Быстрый фото-доступ</li>
+            </ul>
+            <a data-bind-href="ticketUrl" href="#">Выбрать</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="schedule" class="section schedule section-reveal">
+        <div class="section-title-wrap">
+          <p class="section-label">Schedule</p>
+          <h2>Тайминг вечера</h2>
+        </div>
+        <div class="timeline">
+          <div><span>18:00</span><p>Открытие дверей</p></div>
+          <div><span>19:30</span><p>Local Support Set</p></div>
+          <div><span>20:30</span><p data-bind="guest">Lil Nakur</p></div>
+          <div><span>21:30</span><p data-bind="artist">Gorilla Glue</p></div>
+          <div><span>23:10</span><p>Afterparty DJ Set</p></div>
+        </div>
+      </section>
+
+      <section class="section gallery section-reveal">
+        <div class="section-title-wrap">
+          <p class="section-label">Media</p>
+          <h2>Атмосфера прошлых выступлений</h2>
+        </div>
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80" alt="Концертная сцена и свет" />
+          <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80" alt="Толпа на живом выступлении" />
+          <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=900&q=80" alt="Дым и свет на выступлении" />
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80" alt="Фестиваль на открытом воздухе" />
+        </div>
+      </section>
+
+      <section id="faq" class="section faq section-reveal">
+        <div class="section-title-wrap">
+          <p class="section-label">FAQ</p>
+          <h2>Частые вопросы</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Можно ли использовать этот сайт как шаблон под других артистов?</summary>
+            <p>Да. Данные артиста, даты, ссылки и текста меняются через объект в script.js за 2-3 минуты.</p>
+          </details>
+          <details>
+            <summary>Как подключить реальную продажу билетов?</summary>
+            <p>Просто поставь реальную ссылку сервиса билетов в поле ticketUrl. Все кнопки обновятся автоматически.</p>
+          </details>
+          <details>
+            <summary>Работает ли сайт на телефоне?</summary>
+            <p>Да, есть адаптивная верстка, мобильное меню и оптимизированные блоки для маленьких экранов.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section cta section-reveal">
+        <h2>Готово к запуску за вечер</h2>
+        <p>
+          Используй шаблон как основу: меняй артиста, блоки, цену и стили. Подходит для тура,
+          одиночного концерта или музыкального фестиваля.
+        </p>
+        <a class="button button-primary" data-bind-href="ticketUrl" href="#">Открыть продажи</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <span data-bind="artist">Gorilla Glue</span> • <span data-bind="city">Санкт-Петербург</span>
+        • <span id="year"></span>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
